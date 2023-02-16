@@ -14,19 +14,13 @@ let b = a.sort((a, b) => {
 console.log(b);
 
 // Bài 2:
-let c = [];
-b.forEach((m) => {
-    let exist = c.find((item) => {
-        return item === m.name;
-    });
-    if (!exist) c.push(m.name);
-});
+let c = [...new Set(b.map(m => { return m.name; }))]
 
 console.log(c);
 // Bài 3:
 let res = 0;
 let d = new Array(100).fill(0).map((m, i) => {
-    return res += (m + i) % 5 == 0 ? m + i : 0, m + i, i++;
+    return res += (m + i) % 5 == 0 ? 0 : m + i, m + i, i++;
 });
 console.log(res);
 
