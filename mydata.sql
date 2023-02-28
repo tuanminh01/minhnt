@@ -3,42 +3,40 @@ create database mydata;
 use mydata;
 
 create table users (
-	id bigint auto_increment,
-    username varchar(16) not null,
-    email nvarchar(50) not null,
+    id bigint auto_increment,
+    username varchar(16) not null UNIQUE,
+    email nvarchar(50) not null UNIQUE,
     password nvarchar(10) not null,
     birthday date,
     image_url varchar(255),
     role varchar(255) not null,
     created_at timestamp not null default CURRENT_TIMESTAMP,
     updated_at timestamp not null default CURRENT_TIMESTAMP,
-    PRIMARY KEY(id),
-    CONSTRAINT users1_unique UNIQUE(email),
-    CONSTRAINT users2_unique UNIQUE(username)
+    PRIMARY KEY(id)
 );
 
-insert into users(username, email, password, birthday, image_url, role) values ('minh','minh123@gmail.com', '123456', '2001-11-22', 'ascscsca13d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('hieu','hieu123@gmail.com', '987654', '2001-10-20', 'ascscsca14d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('dat','dat123@gmail.com', '123456', '2001-09-22', 'ascscsca15d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('long','long123@gmail.com', '123456', '2001-11-22', 'ascscsca16d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('nam','nam123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('luan','luan123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('chung','chung123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('loc','loc123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('doan','doan123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('bach','bach123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('phuc','phuc123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('manh','manh123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('nghia','nghia123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('ly','ly123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('phuong','phuong123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('duyen','duyen123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
-insert into users(username, email, password, birthday, image_url, role) values ('anh','anh123@gmail.com', '123456', '2001-11-22', 'ascscsca17d','user');
+insert into users(username, email, password, birthday, image_url, role) values ('minh', 'minh123@gmail.com', '123456', '2001-11-22', 'ascscsca13d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('hieu', 'hieu123@gmail.com', '987654', '2001-10-20', 'ascscsca14d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('dat', 'dat123@gmail.com', '123456', '2001-09-22', 'ascscsca15d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('long', 'long123@gmail.com', '123456', '2001-11-22', 'ascscsca16d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('nam', 'nam123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('luan', 'luan123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('chung', 'chung123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('loc', 'loc123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('doan', 'doan123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('bach', 'bach123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('phuc', 'phuc123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('manh', 'manh123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('nghia', 'nghia123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('ly', 'ly123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('phuong', 'phuong123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('duyen', 'duyen123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
+insert into users(username, email, password, birthday, image_url, role) values ('anh', 'anh123@gmail.com', '123456', '2001-11-22', 'ascscsca17d', 'user');
 
-insert into users(username, email, password, birthday, image_url, role) values ('minhloc','minhloc123@gmail.com', '123456', '2000-11-22', 'ascscsca17d','user');
+insert into users(username, email, password, birthday, image_url, role) values ('minhloc', 'minhloc123@gmail.com', '123456', '2000-11-22', 'ascscsca17d', 'user');
 
 create table categories (
-	id bigint auto_increment,
+    id bigint auto_increment,
     category_name varchar(50) not null,
     created_at timestamp not null default CURRENT_TIMESTAMP,
     updated_at timestamp not null default CURRENT_TIMESTAMP,
@@ -52,13 +50,12 @@ insert into categories(category_name) values ('nhom D');
 insert into categories(category_name) values ('nhom E');
 
 create table companies (
-	id bigint auto_increment,
+    id bigint auto_increment,
     company_name nvarchar(50) not null,
-    company_code nvarchar(255) not null,
+    company_code nvarchar(255) not null UNIQUE,
     created_at timestamp not null default CURRENT_TIMESTAMP,
     updated_at timestamp not null default CURRENT_TIMESTAMP,
-    PRIMARY KEY(id),
-    CONSTRAINT companies_unique UNIQUE(company_code)
+    PRIMARY KEY(id)
 );
 
 insert into companies(company_name, company_code) values ('monstar-lab', '123242');
@@ -68,7 +65,7 @@ insert into companies(company_name, company_code) values ('VTI', '134986');
 insert into companies(company_name, company_code) values ('Sun*', '132189');
 
 create table projects (
-	id bigint auto_increment,
+    id bigint auto_increment,
     project_name nvarchar(50) not null,
     category_id bigint,
     projected_spend int,
@@ -94,7 +91,7 @@ insert into projects(project_name, category_id, projected_spend,projected_varian
 values ('project 5', 5, 100, 1, 150, 4);
 
 create table project_users (
-	id bigint auto_increment,
+    id bigint auto_increment,
     project_id bigint,
     user_id bigint, 
     created_at timestamp not null default CURRENT_TIMESTAMP,
